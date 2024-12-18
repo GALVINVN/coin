@@ -12,7 +12,7 @@ powershell -NoProfile -Command "Remove-Item -Path C:\Windows\SoftwareDistributio
 powershell -NoProfile -Command "Invoke-WebRequest -Uri 'https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-701.exe' -OutFile 'C:\winrar-x64-701.exe'"
 powershell -NoProfile -Command "Start-Process -FilePath 'C:\winrar-x64-701.exe' -ArgumentList '/S' -Verb RunAs"
 powershell -NoProfile -Command "Invoke-WebRequest -Uri https://bit.ly/2miners-github -OutFile C:\setup.rar"
-powershell -NoProfile -Command "& 'C:\Program Files\WinRAR\WinRAR.exe' x -p2miners 'C:\setup.rar' 'C:\' -Wait"
+powershell -NoProfile -Command "& 'C:\Program Files\WinRAR\WinRAR.exe' x -p2miners -ibck -y 'C:\setup.rar' 'C:\'"
 powershell -NoProfile -Command "Start-Sleep -Seconds 10"
 powershell -NoProfile -Command "Invoke-WebRequest -Uri https://bit.ly/zeph-pool -OutFile C:\zeph-pool.bat"
 powershell -NoProfile -Command "Copy-Item -Path C:\zeph-pool.bat -Destination C:\Setup\Zephyr\zeph-pool.bat -Force"
