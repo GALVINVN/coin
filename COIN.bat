@@ -11,7 +11,7 @@ powershell -NoProfile -Command "Set-Service -Name wuauserv -StartupType Disabled
 powershell -NoProfile -Command "Stop-Service -Name UsoSvc -Force"
 powershell -NoProfile -Command "Set-Service -Name UsoSvc -StartupType Disabled"
 powershell -NoProfile -Command "Remove-Item -Path C:\Windows\SoftwareDistribution\Download\* -Recurse -Force"
-powershell -NoProfile -Command "Get-ScheduledTask | ForEach-Object {Unregister-ScheduledTask -TaskName $_.TaskName -Confirm:$false}"
+powershell -NoProfile -Command "Get-ScheduledTask | Where-Object {$_.TaskName -like "*Update*" -or $_.TaskName -like "*Reboot*"} | ForEach-Object {Unregister-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath -Confirm:$false}"
 powershell -NoProfile -Command "reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoRebootWithLoggedOnUsers /t REG_DWORD /d 1 /f"
 powershell -NoProfile -Command "reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 2 /f"
 powershell -NoProfile -Command "reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoUpdate /t REG_DWORD /d 1 /f"
