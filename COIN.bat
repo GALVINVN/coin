@@ -4,6 +4,8 @@ powershell -NoProfile -Command "Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\
 powershell -NoProfile -Command "Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' -Name 'TargetReleaseVersion' -Value 1 -Type DWord"
 powershell -NoProfile -Command "Set-MpPreference -DisableRealtimeMonitoring $true"
 powershell -NoProfile -Command "Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer -Name NoWindowsUpdate -Value 1 -Type DWORD"
+powershell -NoProfile -Command "Stop-Service -Name wuauserv -Force"
+powershell -NoProfile -Command "Set-Service -Name wuauserv -StartupType Disabled"
 powershell -NoProfile -Command "Stop-Service -Name bits -Force"
 powershell -NoProfile -Command "Set-Service -Name wuauserv -StartupType Disabled"
 powershell -NoProfile -Command "Stop-Service -Name UsoSvc -Force"
