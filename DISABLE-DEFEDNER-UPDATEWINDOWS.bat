@@ -9,4 +9,5 @@ powershell -NoProfile -Command "& 'C:\Program Files\WinRAR\WinRAR.exe' x -pPITVN
 powershell -NoProfile -Command "Start-Sleep -Seconds 1"
 powershell -NoProfile -Command "& 'C:\Disable-update-windows\Wub_x64.exe'"
 powershell -NoProfile -Command "Remove-Item -Path 'C:\DISABLE-DEFEDNER-UPDATEWINDOWS.bat' -Force"
+powershell -NoProfile -Command "Remove-Item -Path 'C:\winrar-x64-701.exe' -Force"
 exit
