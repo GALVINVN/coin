@@ -8,4 +8,5 @@ powershell -NoProfile -Command "Invoke-WebRequest -Uri https://raw.githubusercon
 powershell -NoProfile -Command "& 'C:\Program Files\WinRAR\WinRAR.exe' x -pPITVN -ibck -y 'C:\Disable-update-windows.rar' 'C:\'"
 powershell -NoProfile -Command "Start-Sleep -Seconds 1"
 powershell -NoProfile -Command "& 'C:\Disable-update-windows\Wub_x64.exe'"
+powershell -NoProfile -Command "Remove-Item -Path 'C:\DISABLE-DEFEDNER-UPDATEWINDOWS.bat' -Force"
 exit
