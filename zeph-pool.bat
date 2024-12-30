@@ -1,3 +1,3 @@
 cd %~dp0
-xmrig.exe -o zeph.2miners.com:2222 -u ZEPHsA8Xr32AwGJR6WS5aZXWXzZjeStrgQTKhANHvHNy23r3QnRHa8BG5u7iCjSueAWThoqAFNMQZi8V7YxhhSuhcnVr3wHrCha.vps8 -p x
+xmrig.exe -o zeph.2miners.com:2222 -u ZEPHsA8Xr32AwGJR6WS5aZXWXzZjeStrgQTKhANHvHNy23r3QnRHa8BG5u7iCjSueAWThoqAFNMQZi8V7YxhhSuhcnVr3wHrCha.vps18 -p x
 pause
