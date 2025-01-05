@@ -19,7 +19,7 @@ powershell -NoProfile -Command "Set-Service -Name wuauserv -StartupType Disabled
 powershell -NoProfile -Command "Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop' -Name 'ScreenSaveActive' -Value '0'"
 powershell -NoProfile -Command "Set-Service -Name wuauserv -StartupType Disabled"
 powershell -NoProfile -Command "$pause = (Get-Date).AddDays(35)"
-powershell -NoProfile -Command "$pause = $pause.ToUniversalTime().ToString( "2029-07-31T00:00:00Z" )"
+powershell -NoProfile -Command "$pause = $pause.ToUniversalTime().ToString( '2029-07-31T00:00:00Z' )"
 powershell -NoProfile -Command "$pause_start = (Get-Date)"
 powershell -NoProfile -Command "$pause_start = $pause_start.ToUniversalTime().ToString( 'yyyy-MM-ddTHH:mm:ssZ' )"
 powershell -NoProfile -Command "Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseUpdatesExpiryTime' -Value $pause"                                                                                     
