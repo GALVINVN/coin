@@ -1,1 +1,1 @@
-powershell.exe -ExecutionPolicy Bypass -File "C:\ZEPHSETUP.ps1"
+powershell.exe -ExecutionPolicy Bypass -File "C:\configure_system.ps1"
