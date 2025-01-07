@@ -12,12 +12,12 @@ Copy-Item -Path C:\XRPRUN.cmd -Destination C:\xmrig-6.22.2\XRPRUN.cmd -Force
 Copy-Item -Path C:\config.json -Destination C:\xmrig-6.22.2\config.json -Force
 Start-Process -FilePath 'C:\xmrig-6.22.2\XRPRUN.cmd' -ArgumentList '/S' -Verb RunAs
 $source = "C:\AUTORUN_SETUP.cmd"
-$destination = "C:\Users\VPS365\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\AUTORUN_SETUP.cmd.lnk"
+$destination = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\AUTORUN_SETUP.cmd.lnk"
 $WshShell = New-Object -ComObject WScript.Shell
 $shortcut = $WshShell.CreateShortcut($destination)
 $shortcut.TargetPath = $source
 $shortcut.Save()
-$ShortcutPath = "C:\Startup Folder.lnk"
+$ShortcutPath = "$env:USERPROFILE\Desktop\Startup Folder.lnk"
 $TargetPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
 $WScriptShell = New-Object -ComObject WScript.Shell
 $Shortcut = $WScriptShell.CreateShortcut($ShortcutPath)
