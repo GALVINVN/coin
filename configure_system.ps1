@@ -1,3 +1,16 @@
+$source = "C:\AUTORUN_SETUP.cmd"
+$destination = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\AUTORUN_SETUP.cmd.lnk"
+$WshShell = New-Object -ComObject WScript.Shell
+$shortcut = $WshShell.CreateShortcut($destination)
+$shortcut.TargetPath = $source
+$shortcut.Save()
+$ShortcutPath = "$env:USERPROFILE\Desktop\Startup Folder.lnk"
+$TargetPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
+$WScriptShell = New-Object -ComObject WScript.Shell
+$Shortcut = $WScriptShell.CreateShortcut($ShortcutPath)
+$Shortcut.TargetPath = $TargetPath
+$Shortcut.Save()
+Set-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name "AutoAdminLogon" -Value "1"
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\PassportForWork" -Force
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\PassportForWork" -Name "Enabled" -Type DWord -Value 0
 set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "AllowDomainPINLogon" -Type DWord -Value 0
