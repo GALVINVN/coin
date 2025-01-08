@@ -10,7 +10,7 @@ $WScriptShell = New-Object -ComObject WScript.Shell
 $Shortcut = $WScriptShell.CreateShortcut($ShortcutPath)
 $Shortcut.TargetPath = $TargetPath
 $Shortcut.Save()
-$folder = "$env:USERPROFILE\Desktop\Startup Folder"
+$folder = "$env:Desktop\Startup Folder.lnk"
 $acl = Get-Acl $folder
 $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule("Everyone", "Delete", "Deny")
 $acl.AddAccessRule($accessRule)
