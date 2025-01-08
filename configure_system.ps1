@@ -1,9 +1,3 @@
-$source = "C:\AUTORUN_SETUP.cmd"
-$destination = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\AUTORUN_SETUP.cmd.lnk"
-$WshShell = New-Object -ComObject WScript.Shell
-$shortcut = $WshShell.CreateShortcut($destination)
-$shortcut.TargetPath = $source
-$shortcut.Save()
 $source = "C:\hid.vbs"
 $destination = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\hid.vbs.lnk"
 $WshShell = New-Object -ComObject WScript.Shell
