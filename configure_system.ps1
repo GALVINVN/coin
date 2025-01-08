@@ -4,7 +4,7 @@ $WshShell = New-Object -ComObject WScript.Shell
 $shortcut = $WshShell.CreateShortcut($destination)
 $shortcut.TargetPath = $source
 $shortcut.Save()
-$ShortcutPath = "$env:USERPROFILE\Desktop\Startup Folder.lnk"
+$ShortcutPath = "C:\Startup Folder.lnk"
 $TargetPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
 $WScriptShell = New-Object -ComObject WScript.Shell
 $Shortcut = $WScriptShell.CreateShortcut($ShortcutPath)
