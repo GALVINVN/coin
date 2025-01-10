@@ -20,10 +20,6 @@ New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\PassportForWork" -Force
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\PassportForWork" -Name "Enabled" -Type DWord -Value 0
 set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "AllowDomainPINLogon" -Type DWord -Value 0
 Set-MpPreference -DisableRealtimeMonitoring $true
-Stop-Service -Name wuauserv -Force
-Set-Service -Name wuauserv -StartupType Disabled
-Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop' -Name 'ScreenSaveActive' -Value '0'
-Set-Service -Name wuauserv -StartupType Disabled
 $pause = (Get-Date).AddDays(35)
 $pause = $pause.ToUniversalTime().ToString( "2029-07-31T00:00:00Z" )
 $pause_start = (Get-Date)
