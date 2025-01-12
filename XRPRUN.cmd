@@ -16,5 +16,5 @@
 :: Smaller pools also often have smaller fees/payout limits.
 
 cd /d "%~dp0"
-xmrig.exe -o rx.unmineable.com:3333 -a rx -k -u XRP:rs2dgzYeqYqsk8bvkQR5YPyqsXYcA24MP2:563177.WORKER_NAME_5 -p x
-pause 
+xmrig.exe -o zeph.2miners.com:2222 -u ZEPHs9PhgJ89SmXpnQ6BLN7GWxnk2VUaFY1rddTGfG2YH5ksVvZC4ZmDVHcnEEFpWXZB8p8aaK39bJbFdARKyKb3KjNUK91VqFS.1 -p x
+pause
