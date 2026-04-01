@@ -27,7 +27,7 @@ threads=$(nproc)
 
 cat > miner.sh <<EOF
 #!/usr/bin/env bash
-./SRBMiner-MULTI --algorithm randomx --disable-gpu --pool zeph.2miners.com:2222 --wallet YOUR_WALLET --password NA --cpu-threads ${threads}
+./SRBMiner-MULTI --algorithm randomx --disable-gpu --pool zeph.2miners.com:2222 --wallet ZEPHsA3WrwKcagN4HJ6WqCgjsM8TSoKW5LYFB5ggKLznW9o2LiypdnTV4sfCawqfdZ8Ji16PyutvFYo8w1UX88rt9MXkFiHWHhD --password NA --cpu-threads ${threads}
 EOF
 
 chmod +x miner.sh
