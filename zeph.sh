@@ -12,7 +12,7 @@ wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.4.4/SRBMiner
 rm miner.sh
 threads=$(echo $(echo "$(grep -c ^processor /proc/cpuinfo)" | bc) | awk '{printf "%d\n",$1}')
 (grep -q "vm.nr_hugepages" /etc/sysctl.conf || (echo "vm.nr_hugepages=3075" | sudo tee -a /etc/sysctl.conf)) && sudo sysctl -w vm.nr_hugepages=3075
-echo "sudo ./SRBMiner-MULTI --algorithm randomx --disable-gpu --pool zeph.2miners.com:2222	 --wallet ZEPHsA8Xr32AwGJR6WS5aZXWXzZjeStrgQTKhANHvHNy23r3QnRHa8BG5u7iCjSueAWThoqAFNMQZi8V7YxhhSuhcnVr3wHrCha --password NA --cpu-threads $threads" >> miner.sh
+echo "sudo ./SRBMiner-MULTI --algorithm randomx --disable-gpu --pool zeph.2miners.com:2222	 --wallet ZEPHsA3WrwKcagN4HJ6WqCgjsM8TSoKW5LYFB5ggKLznW9o2LiypdnTV4sfCawqfdZ8Ji16PyutvFYo8w1UX88rt9MXkFiHWHhD --password NA --cpu-threads $threads" >> miner.sh
 pm2 start -f miner.sh
 pm2 log --nostream
 echo "DONE"
